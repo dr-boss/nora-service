@@ -59,13 +59,13 @@ export class UserRepository {
         )`
     );
 
-    // await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
+     await service.query('ALTER TABLE appuser ADD COLUMN noderedversion integer DEFAULT 1');
     await service.query('ALTER TABLE appuser ADD COLUMN refreshToken integer DEFAULT 1');
-    // const repo = new UserRepository(service);
-    // await repo.incrementNoderedTokenVersion('ARcEql2ileYghxMOstan2bOsSEj1');
-    // const users = await service.query('select * from appuser');
+     const repo = new UserRepository(service);
+     await repo.incrementNoderedTokenVersion('ARcEql2ileYghxMOstan2bOsSEj1');
+     const users = await service.query('select * from appuser');
 
-    // console.log(await repo.getUser('ARcEql2ileYghxMOstan2bOsSEj1'));
+     console.log(await repo.getUser('ARcEql2ileYghxMOstan2bOsSEj1'));
 
 })().catch(err => {
     console.error(err);
